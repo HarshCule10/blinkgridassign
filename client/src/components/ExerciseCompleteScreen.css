@@ -3,21 +3,29 @@
  */
 
 .exercise-complete-screen {
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0;
+  margin: 0;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  overflow-y: auto;
 }
 
 .exercise-complete-container {
   background: white;
-  border-radius: 16px;
+  border-radius: 0;
   padding: 2rem 1.5rem;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
 }
 
 .title {
@@ -232,57 +240,58 @@
 /* Responsive Design */
 @media (max-width: 640px) {
   .exercise-complete-screen {
-    padding: 0.75rem;
+    padding: 0;
   }
 
   .exercise-complete-container {
-    padding: 1.5rem 1rem;
-    border-radius: 12px;
+    padding: 2rem 1.25rem;
+    border-radius: 0;
+    min-height: 100vh;
   }
 
   .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle {
-    font-size: 0.875rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
   }
 
   .performance-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .performance-label {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    margin-bottom: 1rem;
   }
 
   .submit-button {
-    padding: 0.875rem;
-    font-size: 1rem;
+    padding: 1rem;
+    font-size: 1.0625rem;
   }
 
   .score-breakdown {
-    margin-top: 1.5rem;
-    padding: 1.25rem 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .score-title {
-    font-size: 1.125rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .score-details {
     flex-direction: column;
     gap: 0.5rem;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 
   .score-item.total {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 
   .score-separator {
@@ -291,20 +300,27 @@
 
   .low-effort-warning,
   .error-message {
-    padding: 0.875rem;
-    gap: 0.625rem;
+    padding: 1rem;
+    gap: 0.75rem;
     margin-top: 1rem;
   }
 
   .warning-text,
   .error-text {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
   }
 }
 
-/* Tablet adjustments */
-@media (min-width: 641px) and (max-width: 768px) {
+/* Tablet and Desktop - add back borders and spacing */
+@media (min-width: 641px) {
+  .exercise-complete-screen {
+    padding: 2rem;
+  }
+
   .exercise-complete-container {
-    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    padding: 3rem;
+    min-height: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
 }
